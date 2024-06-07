@@ -1,5 +1,8 @@
 import java.util.Random;
 
+/**
+ * An implementation of {@link <a href="https://en.wikipedia.org/wiki/Perlin_noise">Perlin noise algorithm</a>}.
+ */
 public class PerlinNoise implements Noise {
     private static final int PERMUTATION_SIZE = 1 << 8;
     private final int[] permutation;
@@ -8,10 +11,18 @@ public class PerlinNoise implements Noise {
         permutation = shuffle(random);
     }
 
+    /**
+     * Creates new noise with given seed
+     *
+     * @param seed noise seed
+     */
     public PerlinNoise(final long seed) {
         this(new Random(seed));
     }
 
+    /**
+     * Creates new noise with random seed
+     */
     public PerlinNoise() {
         this(new Random());
     }
